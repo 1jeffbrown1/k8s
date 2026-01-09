@@ -11,3 +11,8 @@ echo "deb [signed-by=/etc/apt/keyrings/helm.gpg] https://packages.buildkite.com/
 # Install Helm
 sudo apt-get update
 sudo apt-get install helm
+
+# helm requires access to the Kube Config file in order to connect to your k8s cluster
+# and do work.  Get the Kube config file, save it somewhere, and create an environment
+# variable name KUBECONFIG and populate it with the contents of the kube config file
+export KUBECONFIG <full path to kube config file>
